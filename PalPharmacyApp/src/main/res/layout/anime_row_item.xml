@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:layout_marginTop="8dp"
-    android:background="@color/colorWhite"
+    android:background="@drawable/cardstyle"
+    android:layout_marginLeft="8.5dp"
+    android:layout_marginRight="8.5dp"
     android:orientation="horizontal"
     android:padding="8dp">
 

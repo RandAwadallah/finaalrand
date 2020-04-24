@@ -35,10 +35,9 @@
 
                 <EditText
                     android:id="@+id/edittext"
-                    android:layout_width="380dp"
-                    android:layout_height="45dp"
-                    android:layout_marginStart="18dp"
-                    android:ems="10"
+                    android:layout_width="392dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="22dp"
@@ -46,10 +45,11 @@
                     android:background="@drawable/search_style"
                     android:drawableLeft="@drawable/ic_search_black_24dp"
                     android:drawablePadding="8dp"
+                    android:ems="10"
+                    android:windowSoftInputMode="stateHidden"
                     android:hint="Type here to search"
                     android:inputType="text"
-                    android:textColor="@color/colorPrimary"
-                    />
+                    android:textColor="@color/colorPrimary" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerviewid"

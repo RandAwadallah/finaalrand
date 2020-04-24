@@ -18,9 +18,11 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -41,35 +43,44 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-private static int splashtime= 4000;
-    private final String JSON_URL = "http://www.palpharmacy.com/index.php/getPharmacies" ;
-    private JsonArrayRequest request ;
-    private RequestQueue requestQueue ;
+    private static int splashtime = 4000;
+    private final String JSON_URL = "http://www.palpharmacy.com/index.php/getPharmacies";
+    private JsonArrayRequest request;
+    private RequestQueue requestQueue;
     private List<Pharmacy> lstPharmacy;
-    private RecyclerView recyclerView ;
-
-   private DrawerLayout drawer;
+    private RecyclerView recyclerView;
+    ImageButton imgbut1, imgbut2, imgbut3, imgbut4, imgbut5, imgbut6, imgbut7, imgbut8;
+    private DrawerLayout drawer;
     RecyclerViewAdapter myadapter;
-     EditText searchinput;
+    EditText searchinput;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        searchinput= findViewById(R.id.edittext);
-        Toolbar toolbar= findViewById(R.id.toolbar);
+        searchinput = findViewById(R.id.edittext);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        drawer= findViewById(R.id.draw_layout);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+        drawer = findViewById(R.id.draw_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
-drawer.addDrawerListener(toggle);
-toggle.syncState();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+  /*      imgbut1= findViewById(R.id.imgbutton1);
+        imgbut2= findViewById(R.id.imgbutton2);
+        imgbut3= findViewById(R.id.imgbutton3);
+        imgbut4= findViewById(R.id.imgbutton4);
+        imgbut5= findViewById(R.id.imgbutton5);
+        imgbut6= findViewById(R.id.imgbutton6);
+        imgbut7= findViewById(R.id.imgbutton7);
+        imgbut1= findViewById(R.id.imgbutton8);
+*/
 
-
-        lstPharmacy = new ArrayList<>() ;
+        lstPharmacy = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerviewid);
         jsonrequest();
-
 
 
     }
@@ -77,8 +88,8 @@ toggle.syncState();
 
     @Override
     public void onBackPressed() {
-   Intent intent = new Intent(this,MainActivity.class);
-   startActivity(intent);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     private void jsonrequest() {
@@ -87,14 +98,14 @@ toggle.syncState();
             @Override
             public void onResponse(JSONArray response) {
 
-                JSONObject jsonObject  = null ;
+                JSONObject jsonObject = null;
 
-                for (int i = 0 ; i < response.length(); i++ ) {
+                for (int i = 0; i < response.length(); i++) {
 
 
                     try {
-                        jsonObject = response.getJSONObject(i) ;
-                        Pharmacy pharmacy = new Pharmacy() ;
+                        jsonObject = response.getJSONObject(i);
+                        Pharmacy pharmacy = new Pharmacy();
                         pharmacy.setName(jsonObject.getString("name_en"));
                         pharmacy.setDescription(jsonObject.getString("address"));
 //                        pharmacy.setRating(jsonObject.getString("Rating"));
@@ -121,25 +132,25 @@ toggle.syncState();
             }
         });
 
-searchinput.addTextChangedListener(new TextWatcher() {
-    @Override
-    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        searchinput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-    }
+            }
 
-    @Override
-    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-    myadapter.getFilter().filter(charSequence);
-    }
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                myadapter.getFilter().filter(charSequence);
+            }
 
-    @Override
-    public void afterTextChanged(Editable editable) {
+            @Override
+            public void afterTextChanged(Editable editable) {
 
-    }
-});
+            }
+        });
 
         requestQueue = Volley.newRequestQueue(MainActivity.this);
-        requestQueue.add(request) ;
+        requestQueue.add(request);
 
 
     }
@@ -147,7 +158,7 @@ searchinput.addTextChangedListener(new TextWatcher() {
     private void setuprecyclerview(List<Pharmacy> lstPharmacy) {
 
 
-        myadapter = new RecyclerViewAdapter(this, lstPharmacy) ;
+        myadapter = new RecyclerViewAdapter(this, lstPharmacy);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myadapter);
 
@@ -155,18 +166,18 @@ searchinput.addTextChangedListener(new TextWatcher() {
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.nav_aboutus:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new aboutusfragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new aboutusfragment()).commit();
                 break;
             case R.id.nav_language:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Languagefragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Languagefragment()).commit();
                 break;
             case R.id.nav_notification:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new notificationfragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new notificationfragment()).commit();
                 break;
             case R.id.nav_location:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new locationfragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new locationfragment()).commit();
                 break;
 
 

@@ -27,7 +27,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:theme="@style/ThemeOverlay.AppCompat.Light"
-                app:layout_collapseMode="pin"></android.support.v7.widget.Toolbar>
+                app:layout_collapseMode="pin">
+
+            </android.support.v7.widget.Toolbar>
 
 
             <LinearLayout
@@ -113,5 +115,6 @@
             android:textColor="#999999" />
 
     </android.support.v4.widget.NestedScrollView>
+
 
 </android.support.design.widget.CoordinatorLayout>

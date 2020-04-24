@@ -1,10 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/colorGrey">
 
+<GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <ImageButton
+        android:id="@+id/imgbutton1"
+        android:layout_width="117dp"
+        android:layout_height="99dp"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/jamaa" />
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="195dp"
-        android:text="chatbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" />
-</RelativeLayout>
+        android:id="@+id/textview1"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
+        android:layout_row="0"
+        android:layout_marginStart="12dp"
+
+        android:layout_column="0"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="130dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        android:text="Al jamea Pharmacy"
+        android:textSize="20dp">
+
+    </TextView>
+    <ImageButton
+        android:id="@+id/imgbutton2"
+        android:layout_width="117dp"
+        android:layout_height="99dp"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/fida" />
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="110dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        android:text="Fidaa Pharmacy"
+        android:textSize="20dp">
+
+    </TextView>
+    <ImageButton
+        android:id="@+id/imgbutton3"
+        android:layout_width="117dp"
+        android:layout_height="99dp"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/beitjala" />
+
+    <TextView
+        android:id="@+id/textview3"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="130dp"
+        android:text="Beit Jala Pharmacy"
+        android:textColor="@color/colorBlue"
+        android:textSize="20dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/imgbutton4"
+        android:layout_width="117dp"
+        android:layout_height="99dp"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/shefa" />
+    <TextView
+        android:id="@+id/textview4"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="110dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        android:text="Al shefaa Pharmacy"
+        android:textSize="20dp">
+
+    </TextView>
+    <ImageButton
+        android:id="@+id/imgbutton5"
+        android:layout_width="117dp"
+        android:layout_height="99dp"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/grand" />
+    <TextView
+        android:id="@+id/textview5"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="120dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        android:text="grand Pharmacy"
+        android:textSize="20dp">
+
+    </TextView>
+    <ImageButton
+        android:id="@+id/imgbutton6"
+        android:layout_width="117dp"
+        android:layout_height="99dp"
+        android:layout_row="2"
+        android:layout_column="1"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/vanda" />
+
+    <TextView
+        android:id="@+id/textview6"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
+        android:layout_row="2"
+        android:layout_column="1"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="120dp"
+        android:text="Vanda Pharmacy"
+        android:textColor="@color/colorBlue"
+        android:textSize="20dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/imgbutton7"
+        android:layout_width="117dp"
+        android:layout_height="99dp"
+        android:layout_row="3"
+        android:layout_column="0"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+
+        android:background="@drawable/basheer" />
+    <TextView
+        android:id="@+id/textview7"
+        android:layout_width="198dp"
+        android:layout_height="50dp"
+        android:layout_row="3"
+        android:layout_column="0"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="110dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        android:text="Basheer Pharmacy"
+        android:textSize="20dp">
+
+    </TextView>
+
+    <ImageButton
+        android:id="@+id/imgbutton8"
+        android:layout_width="117dp"
+        android:layout_height="99dp"
+        android:layout_row="3"
+        android:layout_column="1"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/health" />
+
+    <TextView
+        android:id="@+id/textview8"
+        android:layout_width="185dp"
+        android:layout_height="73dp"
+        android:layout_row="3"
+        android:layout_column="1"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="110dp"
+        android:text="Health-house Pharmacy"
+        android:textColor="@color/colorBlue"
+        android:textSize="20dp"
+        android:textStyle="bold">
+
+    </TextView>
+</GridLayout>
+
+
+</ScrollView>
